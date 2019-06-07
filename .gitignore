@@ -1,0 +1,5 @@
+# Package directories
+node_modules
+
+# Jest code coverage reports
+.codecoverage

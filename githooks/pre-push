@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Check if the individual developer has their own hook
+CMD_NAME=`basename $0`
+PERSONAL_CMD=githooks/personal/$CMD_NAME
+if [ -f $PERSONAL_CMD ]
+then
+  # If so, run it. $@ passes all the command line arguments passed to this function
+  # If the personal hook fails, fail this one as well
+  if ! $PERSONAL_CMD $@
+  then
+    echo "User hook '$CMD_NAME' failed"
+    exit 1
+  fi
+fi
+
+npm run preflight
+[ $? -ne 0 ] && exit 1
+exit 0

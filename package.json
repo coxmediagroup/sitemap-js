@@ -1,0 +1,56 @@
+{
+  "name": "@coxmediagroup/sitemap",
+  "version": "1.0.0",
+  "description": "Javascript object model of a Site Map",
+  "main": "dist/index.js",
+  "scripts": {
+    "build:clean": "rimraf dist",
+    "build:js": "babel src --out-dir dist --extensions \".ts\" --source-maps inline",
+    "build:types": "tsc --emitDeclarationOnly",
+    "build": "npm run build:clean && npm run build:types && npm run build:js",
+    "lint": "tslint --project tsconfig.json -c tslint.json",
+    "preflight": "run-p lint test",
+    "test": "jest --config jest.test.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coxmediagroup/sitemap-js.git"
+  },
+  "keywords": [
+    "NodeJS",
+    "sitemap"
+  ],
+  "author": "github.com/sframe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/coxmediagroup/sitemap-js/issues"
+  },
+  "homepage": "https://github.com/coxmediagroup/sitemap-js#readme",
+  "include": [
+    "dist"
+  ],
+  "dependencies": {
+    "@types/vkbeautify": "^0.99.2",
+    "jsonix": "^3.0.0",
+    "vkbeautify": "^0.99.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/types": "^7.4.4",
+    "@types/jest": "^24.0.13",
+    "@types/node": "^12.0.8",
+    "jest": "^24.1.0",
+    "prettier": "^1.17.1",
+    "rimraf": "^2.6.3",
+    "ts-jest": "~24.0.2",
+    "tslint": "^5.13.1",
+    "tslint-config-airbnb": "^5.11.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
+    "typescript": "^3.5.1",
+    "typescript-tslint-plugin": "^0.1.2"
+  }
+}

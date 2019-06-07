@@ -1,0 +1,10 @@
+{
+  "ignore": [
+    "src/**/*.test.ts"
+  ],
+  "presets": [
+    "@babel/typescript",
+    "@babel/preset-env",
+  ],
+  "plugins": [],
+}
